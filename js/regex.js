@@ -76,15 +76,15 @@ function imprimeResultadoNoInput(resultados) {
 	labelResultado.innerHTML = (resultadosComoArray.length) + " Matches (resultados)";
 
     if(resultadosComoArray.length > 0) {
-    	inputResultado.value = resultadosComoArray.join(' | ');
-    	inputResultado.style.borderStyle = 'solid';
-    	inputResultado.style.borderColor = 'lime';//verde
-    } else {
-    	inputResultado.placeholder = 'Sem matches (resultados)';
-    	inputResultado.value = '';
-    	inputResultado.style.borderStyle = 'solid';
-    	inputResultado.style.borderColor = 'red';
-    }
+		inputResultado.value = resultadosComoArray.join(' | ');
+		inputResultado.style.borderStyle = 'solid';
+		inputResultado.style.borderColor = 'lime';//verde
+	} else {
+		inputResultado.placeholder = 'Sem matches (resultados)';
+		inputResultado.value = '';
+		inputResultado.style.borderStyle = 'solid';
+		inputResultado.style.borderColor = 'red';
+	}
 }
 
 
@@ -117,7 +117,7 @@ function comHighlight(texto) {
 }
 
 function escapeHtml( string ) {
-     return string.replace(/&/g, '&amp;')
+    return string.replace(/&/g, '&amp;')
             .replace(/"/g, '&quot;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
@@ -133,16 +133,16 @@ function pegaValoresDoForm() {
 	var checkboxIndex 	= document.querySelector('#mostraIndex');
 	var checkboxGroups 	= document.querySelector('#mostraGrupos');
 
-  	_verifiqueInputs(inputTarget, inputPattern);
+	_verifiqueInputs(inputTarget, inputPattern);
 
-  	console.log('Target:  ' + inputTarget.value);
-  	console.log('Pattern: ' + inputPattern.value.trim());
+	console.log('Target:  ' + inputTarget.value);
+	console.log('Pattern: ' + inputPattern.value.trim());
 
-  	return {'target': inputTarget.value.trim(), 
-  			'pattern': inputPattern.value, 
-  			'mostraIndex': checkboxIndex.checked, 
-  			'mostraGrupos' : checkboxGroups.checked};
-}
+	return {'target': inputTarget.value.trim(), 
+		'pattern': inputPattern.value, 
+		'mostraIndex': checkboxIndex.checked, 
+		'mostraGrupos' : checkboxGroups.checked};
+	}
 
 function _verifiqueInputs(inputTarget, inputPattern) {
 	if(!inputTarget.value) {
